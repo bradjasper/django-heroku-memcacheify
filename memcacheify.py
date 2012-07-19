@@ -33,7 +33,7 @@ def memcacheify():
 
     if all((environ.get(e, '') for e in MEMCACHE_ENV_VARS)):
         caches['default'] = {
-            'BACKEND': 'django_pylibmc.memcached.PyLibMCCache',
+            'BACKEND': 'johnny.backends.memcached.MemcachedCache',
             'BINARY': True,
             'LOCATION': 'localhost:11211',
             'OPTIONS': {
@@ -47,7 +47,7 @@ def memcacheify():
         environ['MEMCACHE_USERNAME'] = environ.get('MEMCACHIER_USERNAME')
         environ['MEMCACHE_PASSWORD'] = environ.get('MEMCACHIER_PASSWORD')
         caches['default'] = {
-            'BACKEND': 'django_pylibmc.memcached.PyLibMCCache',
+            'BACKEND': 'johnny.backends.memcached.MemcachedCache',
             'BINARY': True,
             'LOCATION': environ.get('MEMCACHIER_SERVERS'),
             'OPTIONS': {
