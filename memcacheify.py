@@ -35,6 +35,7 @@ def memcacheify():
         caches['default'] = {
             'BACKEND': 'johnny.backends.memcached.MemcachedCache',
             'BINARY': True,
+            'JOHNNY_CACHE': = True,
             'LOCATION': 'localhost:11211',
             'OPTIONS': {
                 'ketama': True,
@@ -49,6 +50,7 @@ def memcacheify():
         caches['default'] = {
             'BACKEND': 'johnny.backends.memcached.MemcachedCache',
             'BINARY': True,
+            'JOHNNY_CACHE': = True,
             'LOCATION': environ.get('MEMCACHIER_SERVERS'),
             'OPTIONS': {
                 'ketama': True,
