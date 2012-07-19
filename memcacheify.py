@@ -60,7 +60,10 @@ def memcacheify():
         }
     else:
         caches['default'] = {
-            'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+            'BACKEND': 'johnny.backends.memcached.MemcachedCache',
+            'LOCATION': '127.0.0.1:11211',
+            'JOHNNY_CACHE': True,
         }
+    
 
     return caches
